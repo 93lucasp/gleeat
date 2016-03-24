@@ -1,0 +1,29 @@
+{
+  "name": "gleeat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/93lucasp/gleeat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/93lucasp/gleeat/issues"
+  },
+  "homepage": "https://github.com/93lucasp/gleeat#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "hbs": "^4.0.0",
+    "hbs-utils": "0.0.3",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.4.8",
+    "morgan": "^1.7.0",
+    "path": "^0.12.7"
+  }
+}
