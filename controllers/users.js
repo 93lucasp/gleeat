@@ -1,11 +1,11 @@
 var User = require('../models/user');
-// var session = require('express-session');
+var session = require('express-session');
 
 var usersController = {
 
 	create: function(req, res) {
 		var user = req.body;
-		User.create(user, function(err, user) {
+		User.createSecure(user, function(err, user) {
 		  err ?
 		    es.status(500).send() :
 	  		res.status(201).send(JSON.stringify(user));
@@ -33,6 +33,30 @@ var usersController = {
   		if(err) returnError(err);
   		 res.render('../views/profile', {userJS: JSON.stringify(user), user: user});
   	});
+  },
+
+  loginUser: function(req, res) {
+    var user = req.body;
+    console.log("logged4");
+    var email = req.body.email;
+    var password = req.body.password;
+    console.log("user is: ", user);
+    User.authenticate(email, password, function (err, user) {
+      console.log("logged2");
+      if (err) {
+        console.log(err);
+        res.status(500).send();
+      } else {
+        req.login(user);
+        res.status(200).send();
+      }
+    });
+  },
+
+  logoutUser: function(req, res) {
+    req.logout();
+    console.log("logout", req.session);
+    res.redirect("/");
   },
 };
 

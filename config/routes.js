@@ -5,15 +5,15 @@ var express 			   = require('express'),
 	methodOverride 		   = require('method-override'),
 	path 				   = require('path'),
 	logger 				   = require('morgan'),
-	// expressSession 		   = require('express-session'),
-	// cookieParser   		   = require("cookie-parser"),
+	expressSession 		   = require('express-session'),
+	cookieParser   		   = require("cookie-parser"),
 	postsController 	   = require('../controllers/posts'),
 	usersController 	   = require('../controllers/users'),
-	// sessionController	   = require('../controllers/session'),
+
+	sessionController	   = require('../controllers/session'),
 	router 				   = express.Router();
 
-mongoose.connect(process.env.MONGOLAB_URI ||
-    process.env.MONGOHQ_URL || 'mongodb://localhost/gleeat');
+// mongoose.connect('mongodb://localhost/gleeat');
 
 router.route('/').get(function(req, res){
   res.render('welcome');
@@ -30,6 +30,11 @@ router.route('/profile/:id')
 	.get(usersController.show);
 	// .delete(usersController.destroy)
 	// .put(usersController.update);
+
+	//session routes
+router.route('/home')
+ 	.post(usersController.loginUser);
+ 	// .get(usersController.logoutUser);
 
 
 module.exports = router;

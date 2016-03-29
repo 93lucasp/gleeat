@@ -1,18 +1,18 @@
 $(document).ready(function() {
-  	parallax();
+  	// parallax();
   });
 
 
 
-function parallax() {
-	var documentEl = $(document),
-	    parallaxBg = $('div.parallax-bg');
+// function parallax() {
+// 	var documentEl = $(document),
+// 	    parallaxBg = $('div.parallax-bg');
 
-	documentEl.on('scroll', function() {
-		var currScrollPos = documentEl.scrollTop();
-		parallaxBg.css('background-position', '0' + -currScrollPos/2 + 'px');
-	});
-}
+// 	documentEl.on('scroll', function() {
+// 		var currScrollPos = documentEl.scrollTop();
+// 		parallaxBg.css('background-position', '0' + -currScrollPos/2 + 'px');
+// 	});
+// }
 
 
 var createUser = function(e) {
@@ -36,6 +36,21 @@ var renderUser = function(user) {
   $profilePage.html("");
   var userTemplate = Handlebars.compile($('#user-template').html());
   var compiledHTML = userTemplate({user: showUser});
-    console.log('USER', showUser)
+    console.log('USER', showUser);
   $profilePage.append(compiledHTML);
 };
+
+var loginUser = function(e) {
+	console.log("logged1");
+	e.preventDefault();
+	var user = $(e.target).serialize();
+	console.log(user);
+  	$.post("/home", user)
+    .done(function(req, res) {
+  	 window.location.href = '/home';
+  })
+    .fail(function(err) {
+      console.log("Error", err);
+    });  
+};
+
