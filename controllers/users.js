@@ -41,8 +41,9 @@ var usersController = {
     var email = req.body.email;
     var password = req.body.password;
     console.log("user is: ", user);
+
     User.authenticate(email, password, function (err, user) {
-      console.log("login: ", req.session);
+
       console.log("logged2");
       if (err) {
         console.log(err);
@@ -50,13 +51,14 @@ var usersController = {
       } else {
         req.login(user);
         res.status(200).send();
+        console.log("login: ", req.session);
       }
     });
   },
 
   logoutUser: function(req, res) {
-    console.log("logout: ", req.session);
     req.logout();
+    console.log("logout: ", req.session);
     res.redirect("/");
   },
 };
