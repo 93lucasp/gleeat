@@ -19,6 +19,10 @@ router.route('/').get(function(req, res){
   res.render('welcome');
 });
 
+router.route("/home").get(function(req, res) {
+	res.render("home");
+})
+
 router.route('/api')
 	.get(usersController.apiRoot);
 	
@@ -32,9 +36,10 @@ router.route('/profile/:id')
 	// .put(usersController.update);
 
 	//session routes
-router.route('/home')
+router.route('/login')
  	.post(usersController.loginUser);
- 	// .get(usersController.logoutUser);
+router.route('/logout')
+ 	.get(usersController.logoutUser);
 
 
 module.exports = router;

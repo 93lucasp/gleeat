@@ -42,6 +42,7 @@ var usersController = {
     var password = req.body.password;
     console.log("user is: ", user);
     User.authenticate(email, password, function (err, user) {
+      console.log("login: ", req.session);
       console.log("logged2");
       if (err) {
         console.log(err);
@@ -54,8 +55,8 @@ var usersController = {
   },
 
   logoutUser: function(req, res) {
+    console.log("logout: ", req.session);
     req.logout();
-    console.log("logout", req.session);
     res.redirect("/");
   },
 };

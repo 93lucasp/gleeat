@@ -1,20 +1,13 @@
 $(document).ready(function() {
-  	// parallax();
-  });
 
+  // $("#logout").click(function(user) {
+  // debugger;
+  // console.log(req.session);
+  // console.log(req.session);
+  // session.destroy();
+// });
 
-
-// function parallax() {
-// 	var documentEl = $(document),
-// 	    parallaxBg = $('div.parallax-bg');
-
-// 	documentEl.on('scroll', function() {
-// 		var currScrollPos = documentEl.scrollTop();
-// 		parallaxBg.css('background-position', '0' + -currScrollPos/2 + 'px');
-// 	});
-// }
-
-
+});
 var createUser = function(e) {
 	e.preventDefault();
 	var newUser = $(e.target).serialize();
@@ -45,7 +38,7 @@ var loginUser = function(e) {
 	e.preventDefault();
 	var user = $(e.target).serialize();
 	console.log(user);
-  	$.post("/home", user)
+  	$.post("/login", user)
     .done(function(req, res) {
   	 window.location.href = '/home';
   })
@@ -53,4 +46,9 @@ var loginUser = function(e) {
       console.log("Error", err);
     });  
 };
+
+// $("#logout").click(function() {
+//   console.log("destroiiiiiiiiiiiiiing");
+// 	req.session.destroy();
+// });
 
