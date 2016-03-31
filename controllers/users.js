@@ -6,10 +6,11 @@ var usersController = {
 	create: function(req, res) {
 		var user = req.body;
 		User.createSecure(user, function(err, user) {
-		  err ?
-		    es.status(500).send() :
-	  		res.status(201).send(JSON.stringify(user));
-	  	});
+      console.log("user is2222: ", user);
+      err ?
+        res.status(500).send() :
+        res.status(201).send(JSON.stringify(user));
+    });
 	},
 
 	apiRoot: function(req, res) {
@@ -37,10 +38,10 @@ var usersController = {
 
   loginUser: function(req, res) {
     var user = req.body;
-    console.log("logged4");
+    console.log("logged4", user);
     var email = req.body.email;
     var password = req.body.password;
-    console.log("user is: ", user);
+    console.log("user is3333: ", user);
 
     User.authenticate(email, password, function (err, user) {
 

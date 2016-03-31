@@ -1,14 +1,20 @@
 <nav>
 	<ul>
 		<li class="logo">
-			<a class="nav-link" href="#"><img src="/images/logo.png"></a>
+			<a class="nav-link" href="/"><img src="/images/logo.png"></a>
 		</li>
+		{{#if currentUser}}
+		<li class="nav-item">
+			<a href="/logout" id="logout">Logout</a>
+		</li>
+		<li class="nav-item">
+			<a href="#" id="modalButtonLogin" type="button" data-toggle="modal" data-target="#triggerModalLogin">{{currentUser.firstName}}</a>
+		</li>
+		{{else}}
 		<li class="nav-item">
 			<a href="#" id="modalButtonLogin" type="button" data-toggle="modal" data-target="#triggerModalLogin">Login</a>
 		</li>
-		<li class="nav-item">
-			<a href="/logout" id="logout">Logut</a>
-		</li>
+		{{/if}}
 		<li class="nav-item">
 			<a class="nav-link" href="#">How it works</a>
 		</li>

@@ -16,7 +16,11 @@ var createUser = function(e) {
  	 .done(function(res) {
 		var id = JSON.parse(res)._id;
 		console.log('create user was successful!', res);
-		window.location.href = '/profile/' + id;
+		// window.location.href = '/profile/' + id;
+  $.post("/login", newUser)
+    .done(function(req, res) {
+     window.location.href = '/profile/' + id;
+  });
 	})
      .fail(function(err) {
      console.log("Error", err);

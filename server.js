@@ -42,9 +42,12 @@ app.use(function(req, res, next){
     User.findOne({ _id: req.session.userId },
     function(err, user){
       req.user = user;
+      res.locals.currentUser = user;
       cb(null, user);
       });
+
   };
+  console.log()
   // log out current user
   req.logout = function() {
     req.session.userId = null;
