@@ -4,31 +4,94 @@ html, body {
 	width: 100%;
 	height: 100%;
 }
+footer {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  height: 16%;
+  position: relative;
+  background-color: #ffb600;
+
+}
+.social {
+  float: right;
+  text-align: right;
+  width: 54%;
+  position: inline-block;
+}
+
+.contacts {
+  float: left;
+  text-align: left;
+  line-height: .7em;
+  margin: 1% 1.2%;
+}
+
+.contacts a{
+  color: #fff;
+}
+.contacts a:hover{
+  color: #fff;
+  text-decoration: none;
+}
+
+.copy {
+  position: absolute;
+ 
+ 
+  width: 50%;
+  text-align: center;
+  bottom: 0;
+  margin-left: auto;
+margin-right: auto;
+left: 0;
+right: 0;
+}
 .logo {
 	float: left;
 	margin: 0;
 	margin-top: -.6%;
-	margin-left: -2%;
+	margin-left: 2%;
+  width: 4%;
 }
 .nav-item {
 	float: right;
 	margin-top: 1%;
+
 	
 }
 nav {
 	background-color: #ffb600;
-	height: 4em;
-	overflow: hidden;
+	height: 5em;
+
 	padding: 0 2% 1% 0;
 	z-index: 2;
 	position: fixed;
 	width: 100%;
 	top: 0;
+
 }
 .logo img {
-	width: 5%;
+	width: 100%;
 	margin-top: .2%;
 }
+footer img {
+  width: 5%;
+  margin: 0 2%;
+}
+
+a img:hover { 
+
+    -webkit-transition: -webkit-transform .8s ease-in-out;
+    -ms-transition: -ms-transform .8s ease-in-out;
+    transition: transform .8s ease-in-out;
+    transform:rotate(360deg);
+    -ms-transform:rotate(360deg);
+    -webkit-transform:rotate(360deg);
+    
+
+  } 
+
 
 li {
 	display: inline-block;
