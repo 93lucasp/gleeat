@@ -4,6 +4,10 @@ html, body {
 	width: 100%;
 	height: 100%;
 }
+.profilePages {
+  text-align: center;
+
+}
 footer {
   background-color: #000;
   color: #fff;
@@ -56,9 +60,11 @@ right: 0;
 }
 .nav-item {
 	float: right;
-	margin-top: 1%;
+	margin-top: 1%;	
+}
 
-	
+#parallax #firstH1 {
+  color: #636363;
 }
 nav {
 	background-color: #ffb600;

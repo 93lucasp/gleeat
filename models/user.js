@@ -7,7 +7,7 @@ var UserSchema = new Schema({
 	lastName: {type: String},
 	email: {type: String},
 	skypeName: {type: String},
-	photoUrl: String,
+	photoUrl: {type: String},
 	passwordDigest: {type: String, required: true},
   
 });

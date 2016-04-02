@@ -47,7 +47,7 @@ app.use(function(req, res, next){
       });
 
   };
-  console.log()
+
   // log out current user
   req.logout = function() {
     req.session.userId = null;

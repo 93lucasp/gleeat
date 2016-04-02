@@ -29,11 +29,44 @@ var usersController = {
     },
 
     show: function(req, res) {
-  	var id = req.params.id;
-  	User.findById(id, function(err, user) {
-  		if(err) returnError(err);
-  		 res.render('../views/profile', {userJS: JSON.stringify(user), user: user});
-  	});
+    	var id = req.params.id;
+    	User.findById(id, function(err, user) {
+    		if(err) returnError(err);
+    		 res.render('../views/profile', {userJS: JSON.stringify(user), user: user});
+    	});
+  },
+    update: function(req, res) {
+
+      var id = req.params.id;
+      User.findById(id, function(err, user){
+        if (err) returnError(err);
+        if (req.body.firstName) user.firstName = req.body.firstName;
+        if (req.body.lastName) user.lastName = req.body.lastName;
+        if (req.body.email) user.email = req.body.email;
+        // if (req.body.photoUrl) user.photoUrl = req.body.photoUrl;
+        if (req.body.passwordDigest) user.passwordDigest = req.body.passwordDigest;
+
+
+        user.save(function(err, savedUser) {
+          if (err) {
+            res.status(200);
+          } else {
+            res.json(savedUser);
+          }
+      });
+    });
+  },
+
+  destroy: function(req, res) {
+
+    User.remove({_id: req.params.id}, function(err, user) {
+      console.log(req.params.id);
+      if(err) {
+        res.status(500).send();
+      } else {
+        res.status(204).send(JSON.stringify(user));
+      }
+    });
   },
 
   loginUser: function(req, res) {

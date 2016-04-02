@@ -1,12 +1,72 @@
 <div id="profile_page"></div>
-
- <script id="user-template" type="text/x-handlbars-template">
- <div id="profilePages">
-    <h1><span id="headerFirstName">\{{user.firstName}} \{{user.lastName}}</span> </h1>
-</div>
-
+<script id="user-template" type="text/x-handlbars-template">
+	<div class="profilePages">
+    	<h1>
+    		<span id="headerName">\{{user.firstName}} \{{user.lastName}}</span> 
+    	</h1>
+    	<div id="\{{user._id}}" class="profile">
+    		<p> 
+    			<strong>Name:</strong> <br /> 
+    			<span id="showFirstName"> \{{user.firstName}}</span> 
+    		</p> 
+            <p> 
+            	<strong>Last name:</strong> <br /> 
+            	<span id="showLastName">\{{user.lastName}}</span>
+            </p>
+            <p> 
+            	<strong>Email:</strong> <br /> 
+            	<span id="showEmail"> \{{user.email}}</span> 
+            </p>
+      		<button class="btn btn-primary" id="modalEditUser"  data-toggle="modal" data-target="#triggerEditModal">Edit</button>
+     		<button class= "btn btn-primary" onclick="deleteUser(event)">Delete</button>
+		</div>
+	</div>
 </script> 
 
 <script type="text/javascript">
  renderUser({{{userJS}}});
 </script>
+
+<!-- begin userModal: this is not visible until you call .modal() on it -->
+<div class="modal fade" tabindex="-1" role="dialog" id="triggerEditModal">
+	<div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            	<h4 class="modal-title">Edit Profile</h4>
+          	</div>
+          	<div class="modal-body">
+          		<fieldset class='form-horizontal'>
+	          		<form id="savedUser">
+	          			<!-- Text input-->
+	                	<input type="text" hidden=true value={{user.id}} id="userID">
+	              		<div class="form-group">
+	                		<label class="col-md-4 control-label" for="firstName">First Name</label>
+	                		<div class="col-md-4">
+	                			<span class="noedit">{{firstName}}</span>
+	                			<input id="firstName" name="firstName" type="text" value="{{user.firstName}}" class="form-control input-md" required="">
+	                		</div>
+	              		</div>
+	              		<!-- Text input-->
+	              		<div class="form-group">
+	                		<label class="col-md-4 control-label" for="lastName">Last Name</label>
+	                		<div class="col-md-4">
+	                			<input id="lastName" name="lastName" type="text" value="{{user.lastName}}" class="form-control input-md" required="">
+	                		</div>
+	              		</div>
+		                <!-- Text input-->
+		                <div class="form-group">
+		                	<label class="col-md-4 control-label" for="email">Email</label>
+		                	<div class="col-md-4">
+		                		<input id="editEmail" name="email" type="email" value="{{user.email}}" class="form-control input-md">
+		                	</div>
+		              	</div>
+	              		<button type="button" class="btn btn-primary" onclick="editUser(event)" data-dismiss="modal" id="saveUser">Save</button>
+	              	</form>
+	           	</fieldset>
+	        </div><!-- /.modal-body -->
+	    </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

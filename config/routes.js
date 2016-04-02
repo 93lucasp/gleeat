@@ -31,9 +31,10 @@ router.route('/api/users')
 	.post(usersController.create);
 
 router.route('/profile/:id')
-	.get(usersController.show);
-	// .delete(usersController.destroy)
-	// .put(usersController.update);
+	.get(usersController.show)
+	.put(usersController.update)
+	.delete(usersController.destroy);
+	
 
 	//session routes
 router.route('/login')

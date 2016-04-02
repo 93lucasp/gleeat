@@ -38,7 +38,7 @@ var renderUser = function(user) {
 };
 
 var loginUser = function(e) {
-	console.log("logged1");
+	// console.log("logged1");
 	e.preventDefault();
 	var user = $(e.target).serialize();
 	console.log(user);
@@ -51,8 +51,40 @@ var loginUser = function(e) {
     });  
 };
 
-// $("#logout").click(function() {
-//   console.log("destroiiiiiiiiiiiiiing");
-// 	req.session.destroy();
-// });
+var editUser = function(e) {
+
+  var id = $('#userID').val();
+  var updateData = {
+    firstName: $('#firstName').val(),
+    lastName: $('#lastName').val(),
+    email: $('#editEmail').val(),
+  };
+
+  var ajaxOption = {
+    url: '/profile/' + id,
+    type: "PUT",
+    data: updateData,
+    success: function(result) {
+      console.log("first name is:", updateData.firstName);
+      $('#showFirstName').html(updateData.firstName);
+      $('#showLastName').html(updateData.lastName);
+      $('#showEmail').html(updateData.email);
+      $('#headerName').html(updateData.firstName);
+    }
+  };
+  $.ajax(ajaxOption);
+};
+
+var deleteUser = function(e) {
+  var id = $(e.target).parent().attr("id");
+  var ajaxOption = {
+    url: '/profile/' + id,
+    type: "DELETE",
+    success: function(result) {
+      $("#" + id).remove();
+      window.location.href = '/';
+    }
+  };
+  $.ajax(ajaxOption);
+};
 
