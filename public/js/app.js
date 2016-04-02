@@ -1,13 +1,7 @@
 $(document).ready(function() {
 
-  // $("#logout").click(function(user) {
-  // debugger;
-  // console.log(req.session);
-  // console.log(req.session);
-  // session.destroy();
-// });
-
 });
+
 var createUser = function(e) {
 	e.preventDefault();
 	var newUser = $(e.target).serialize();

@@ -2,16 +2,15 @@ var User = require('../models/user');
 var session = require('express-session');
 
 var usersController = {
-
-	create: function(req, res) {
-		var user = req.body;
-		User.createSecure(user, function(err, user) {
+  create: function(req, res) {
+  	var user = req.body;
+  	User.createSecure(user, function(err, user) {
       console.log("user is2222: ", user);
       err ?
         res.status(500).send() :
         res.status(201).send(JSON.stringify(user));
-    });
-	},
+  });
+  },
 
 	apiRoot: function(req, res) {
 		res.json({

@@ -9,7 +9,6 @@ var express 			   = require('express'),
 	cookieParser   		   = require("cookie-parser"),
 	postsController 	   = require('../controllers/posts'),
 	usersController 	   = require('../controllers/users'),
-
 	sessionController	   = require('../controllers/session'),
 	router 				   = express.Router();
 
@@ -21,7 +20,7 @@ router.route('/').get(function(req, res){
 
 router.route("/home").get(function(req, res) {
 	res.render("home");
-})
+});
 
 router.route('/api')
 	.get(usersController.apiRoot);
