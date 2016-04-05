@@ -26,21 +26,31 @@ var postsController = {
 
   show: function(req, res) {
     console.log("show route");
+
     Post.find({}, function(err, posts) {
+
       if(err) returnError(err);
       posts.forEach(function(post) {
           User.findOne({_id: post.postedBy[0]}, function(err, user) {
+
             post.user = user;
           });
       });
        res.render('../views/home', {posts: posts});
     });
-    // var id = req.session.userId;
-    //   User.findById(id, function(err, user) {
-    //     if(err) returnError(err);
-    //      res.render('../views/home', {user: user});
-    //   });
-    
+   
+  },
+
+  destroy: function(req, res) {
+
+    User.remove({_id: req.params.id}, function(err, user) {
+      console.log(req.params.id);
+      if(err) {
+        res.status(500).send();
+      } else {
+        res.status(204).send(JSON.stringify(user));
+      }
+    });
   },
 
 };

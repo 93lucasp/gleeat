@@ -92,7 +92,7 @@ footer img {
   margin: 0 2%;
 }
 
-a img:hover { 
+footer a img:hover { 
 
     -webkit-transition: -webkit-transform .8s ease-in-out;
     -ms-transition: -ms-transform .8s ease-in-out;

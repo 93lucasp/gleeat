@@ -2,7 +2,7 @@
 <div class="container">
   {{#each posts}}
   
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div class="panel panel-default">
         <div id= "posts" class="panel-body">
 
@@ -11,21 +11,24 @@
           {{this.user.firstName}}
           {{this.user.skypeName}}
           <script type="text/javascript" src="https://secure.skypeassets.com/i/scom/js/skype-uri.js"></script>
+            <div id="{{this._id}}">
               <div id="SkypeButton_Call_{{this.user.skypeName}}_1">
                <script type="text/javascript">
-               Skype.ui({
-               "name": "call",
-               "element": "SkypeButton_Call_{{this.user.skypeName}}_1",
-               "participants": ["{{this.user.skypeName}}"],
-               "imageSize": 24
-               });
+                 Skype.ui({
+                   "name": "call",
+                   "element": "{{this._id}}",
+                   "participants": ["{{this.user.skypeName}}"],
+                   "imageSize": 24
+                 });
                </script>
               </div>
+            </div>
           {{!-- {{user.firstName}} --}}
+          <button class= "btn btn-primary" onclick="deletePost(event)">Delete</button>
         </div>
-         
       </div>
-      </div>
+
+    </div>
  
   {{/each}}
 </div>

@@ -96,6 +96,19 @@ var createPost = function(e) {
  });  
 };
 
+var deletePost = function(e) {
+  var id = $(e.target).parent().attr("id");
+  var ajaxOption = {
+    url: '/home',
+    type: "DELETE",
+    success: function(result) {
+      $("#" + id).remove();
+      window.location.href = '/home';
+    }
+  };
+  $.ajax(ajaxOption);
+};
+
 // var renderPosts = function(posts) {
 //   var showPosts = posts;
 //   var $homePage = $('#posts');
