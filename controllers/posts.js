@@ -40,19 +40,18 @@ var postsController = {
     });
    
   },
-
   destroy: function(req, res) {
-
-    User.remove({_id: req.params.id}, function(err, user) {
+    var id = req.params.id;
+    console.log("back end post id---", id);
+    Post.remove({_id: id}, function(err, post) {
       console.log(req.params.id);
-      if(err) {
-        res.status(500).send();
-      } else {
-        res.status(204).send(JSON.stringify(user));
-      }
+      if (err) {
+      console.log(err);
+      return res.sendStatus(400);
+    }
+    res.sendStatus(200);
     });
-  },
-
+  }
 };
 
 

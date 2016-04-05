@@ -26,11 +26,14 @@ router.route('/api')
 	
 router.route('/api/users')
 	.get(usersController.apiIndex)
-	.post(usersController.create);
+	.post(usersController.create)
 
 router.route('/api/posts')
 	.get(postsController.apiPosts)
 	.post(postsController.createPost);
+	
+router.route('/api/posts/:id')
+	.delete(postsController.destroy);
 
 router.route('/profile/:id')
 	.get(usersController.show)
@@ -39,6 +42,11 @@ router.route('/profile/:id')
 
 router.route('/home')
 	.get(postsController.show);
+
+router.route('/profile/:id')
+	.get(usersController.show)
+	.put(usersController.update)
+	.delete(usersController.destroy);
 	
 
 	//session routes

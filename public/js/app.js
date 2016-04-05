@@ -96,19 +96,20 @@ var createPost = function(e) {
  });  
 };
 
-var deletePost = function(e) {
-  var id = $(e.target).parent().attr("id");
-  var ajaxOption = {
-    url: '/home',
-    type: "DELETE",
-    success: function(result) {
-      $("#" + id).remove();
+
+var deletePost = function(post) {
+  var postId = $(post).data()._id;
+  console.log("ecooooo postID------", postId);
+  console.log("ecooooo post1111", post);
+  $.ajax({
+    url: '/api/posts/' + postId,
+    type: 'DELETE',
+    success: function(res) {
+      // once successfull, re-render all foods
       window.location.href = '/home';
     }
-  };
-  $.ajax(ajaxOption);
+  });
 };
-
 // var renderPosts = function(posts) {
 //   var showPosts = posts;
 //   var $homePage = $('#posts');

@@ -24,7 +24,7 @@
               </div>
             </div>
           {{!-- {{user.firstName}} --}}
-          <button class= "btn btn-primary" onclick="deletePost(event)">Delete</button>
+          <button data-_id="{{this._id}}" class='btn btn-danger delete-album' onclick="deletePost(this)">Delete Event</button>
         </div>
       </div>
 
