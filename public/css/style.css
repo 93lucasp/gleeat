@@ -8,6 +8,12 @@ html, body {
   text-align: center;
 
 }
+
+#createMeal {
+  padding-top: 40%;
+  text-align: center;
+}
+
 footer {
   background-color: #000;
   color: #fff;

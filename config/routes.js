@@ -9,7 +9,6 @@ var express 			   = require('express'),
 	cookieParser   		   = require("cookie-parser"),
 	postsController 	   = require('../controllers/posts'),
 	usersController 	   = require('../controllers/users'),
-	sessionController	   = require('../controllers/session'),
 	router 				   = express.Router();
 
 // mongoose.connect('mongodb://localhost/gleeat');
@@ -18,9 +17,9 @@ router.route('/').get(function(req, res){
   res.render('welcome');
 });
 
-router.route("/home").get(function(req, res) {
-	res.render("home");
-});
+// router.route("/home").get(function(req, res) {
+// 	res.render("home");
+// });
 
 router.route('/api')
 	.get(usersController.apiRoot);
@@ -29,10 +28,17 @@ router.route('/api/users')
 	.get(usersController.apiIndex)
 	.post(usersController.create);
 
+router.route('/api/posts')
+	.get(postsController.apiPosts)
+	.post(postsController.createPost);
+
 router.route('/profile/:id')
 	.get(usersController.show)
 	.put(usersController.update)
 	.delete(usersController.destroy);
+
+router.route('/home')
+	.get(postsController.show);
 	
 
 	//session routes

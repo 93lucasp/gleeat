@@ -9,7 +9,7 @@ var UserSchema = new Schema({
 	skypeName: {type: String},
 	photoUrl: {type: String},
 	passwordDigest: {type: String, required: true},
-  
+  // posts : [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post' }]
 });
 
 // create a new user with secure (hashed) password (for sign up)

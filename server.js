@@ -1,17 +1,18 @@
-var express 	   	= require('express'),
-	app 		    = express(),
-	mongoose 	    = require('mongoose'),
-	bodyParser     	= require('body-parser'),
-	methodOverride 	= require('method-override'),
-	hbs 		   	= require('hbs'),
-	hbsutils 	 	= require('hbs-utils')(hbs),
-	path 			= require('path'),
-	db 				= require("./models"),
-	logger 			= require('morgan'),
-	bcrypt 			= require('bcrypt'),
-	session 		= require("express-session"),
-	keygen			= require('keygenerator'),
-	User 			= require("./models/user");
+var express 	   	 = require('express'),
+	app 		         = express(),
+	mongoose 	       = require('mongoose'),
+	bodyParser       = require('body-parser'),
+	methodOverride 	 = require('method-override'),
+	hbs 		   	     = require('hbs'),
+	hbsutils 	 	     = require('hbs-utils')(hbs),
+	path 			       = require('path'),
+	db 				       = require("./models"),
+	logger 			     = require('morgan'),
+	bcrypt 			     = require('bcrypt'),
+	session 		     = require("express-session"),
+	keygen			     = require('keygenerator'),
+	User 			       = require("./models/user");
+  Post             = require("./models/post");
 
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -61,7 +62,7 @@ app.use(function(req, res, next){
 var routes = require('./config/routes');
 app.use(routes);
 
-app.listen(2000, function() {
+app.listen(2016, function() {
 	console.log('server is running');
 });
 

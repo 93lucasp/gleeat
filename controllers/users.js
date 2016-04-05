@@ -28,6 +28,7 @@ var usersController = {
     },
 
     show: function(req, res) {
+      console.log("finding user");
     	var id = req.params.id;
     	User.findById(id, function(err, user) {
     		if(err) returnError(err);

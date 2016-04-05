@@ -27,7 +27,7 @@ var renderUser = function(user) {
   $profilePage.html("");
   var userTemplate = Handlebars.compile($('#user-template').html());
   var compiledHTML = userTemplate({user: showUser});
-    console.log('USER', showUser);
+    // console.log('USER', showUser);
   $profilePage.append(compiledHTML);
 };
 
@@ -81,4 +81,28 @@ var deleteUser = function(e) {
   };
   $.ajax(ajaxOption);
 };
+
+var createPost = function(e) {
+  e.preventDefault();
+  var newPost = $(e.target).serialize();
+  console.log(newPost);
+  $.post("/api/posts", newPost)
+   .done(function(res) {
+    console.log('create post was successful!', res);
+    window.location.href = '/home';
+  })
+     .fail(function(err) {
+     console.log("Error", err);
+ });  
+};
+
+// var renderPosts = function(posts) {
+//   var showPosts = posts;
+//   var $homePage = $('#posts');
+//   $homePage.html("");
+//   var postsTemplate = Handlebars.compile($('#posts-template').html());
+//   var compiledHTML = postsTemplate({posts: showPosts});
+//     // console.log('USER', showUser);
+//   $homePage.append(compiledHTML);
+// };
 

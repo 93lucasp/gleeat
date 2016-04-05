@@ -17,15 +17,20 @@
             	<strong>Email:</strong> <br /> 
             	<span id="showEmail"> \{{user.email}}</span> 
             </p>
+         
+
+
       		<button class="btn btn-primary" id="modalEditUser"  data-toggle="modal" data-target="#triggerEditModal">Edit</button>
      		<button class= "btn btn-primary" onclick="deleteUser(event)">Delete</button>
 		</div>
 	</div>
 </script> 
 
+			
 <script type="text/javascript">
  renderUser({{{userJS}}});
 </script>
+
 
 <!-- begin userModal: this is not visible until you call .modal() on it -->
 <div class="modal fade" tabindex="-1" role="dialog" id="triggerEditModal">

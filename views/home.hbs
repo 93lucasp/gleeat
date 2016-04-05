@@ -1,29 +1,68 @@
-<h1>ciaoooooooidkfoerkfokermfowerfowrfmowrfowirf</h1>
-<h1>ciaoooooooidkfoerkfokermfowerfowrfmowrfowirf</h1>
-<h1>ciaoooooooidkfoerkfokermfowerfowrfmowrfowirf</h1>
+ <h1> Meals </h1>
+<div class="container">
+  {{#each posts}}
+  
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div id= "posts" class="panel-body">
 
-<h1>ciaoooooooidkfoerkfokermfowerfowrfmowrfowirf</h1>
-<h1>ciaoooooooidkfoerkfokermfowerfowrfmowrfowirf</h1>
-<h1>ciaoooooooidkfoerkfokermfowerfowrfmowrfowirf</h1>
-<h1>ciaoooooooidkfoerkfokermfowerfowrfmowrfowirf</h1>
-<h1>ciaoooooooidkfoerkfokermfowerfowrfmowrfowirf</h1>
-v
-v
-v
-v<h1>ciaoooooooidkfoerkfokermfowerfowrfmowrfowirf</h1>
-<h1>ciaoooooooidkfoerkfokermfowerfowrfmowrfowirf</h1>
-<h1>ciaoooooooidkfoerkfokermfowerfowrfmowrfowirf</h1>
-<h1>ciaoooooooidkfoerkfokermfowerfowrfmowrfowirf</h1>
-<h1>ciaoooooooidkfoerkfokermfowerfowrfmowrfowirf</h1>
-<h1>ciaoooooooidkfoerkfokermfowerfowrfmowrfowirf</h1>
-<h1>ciaoooooooidkfoerkfokermfowerfowrfmowrfowirf</h1>
-<h1>ciaoooooooidkfoerkfokermfowerfowrfmowrfowirf</h1>
-<h1>ciaoooooooidkfoerkfokermfowerfowrfmowrfowirf</h1><h1>ciaoooooooidkfoerkfokermfowerfowrfmowrfowirf</h1>
-<h1>ciaoooooooidkfoerkfokermfowerfowrfmowrfowirf</h1>
-<h1>ciaoooooooidkfoerkfokermfowerfowrfmowrfowirf</h1>
-<h1>ciaoooooooidkfoerkfokermfowerfowrfmowrfowirf</h1>
-<h1>ciaoooooooidkfoerkfokermfowerfowrfmowrfowirf</h1>
+          {{this.title}}
+          {{this.postedBy}}
+          {{this.user.firstName}}
+          {{this.user.skypeName}}
+          <script type="text/javascript" src="https://secure.skypeassets.com/i/scom/js/skype-uri.js"></script>
+              <div id="SkypeButton_Call_{{this.user.skypeName}}_1">
+               <script type="text/javascript">
+               Skype.ui({
+               "name": "call",
+               "element": "SkypeButton_Call_{{this.user.skypeName}}_1",
+               "participants": ["{{this.user.skypeName}}"],
+               "imageSize": 24
+               });
+               </script>
+              </div>
+          {{!-- {{user.firstName}} --}}
+        </div>
+         
+      </div>
+      </div>
+ 
+  {{/each}}
+</div>
+ <div id="createMeal">
+	 <button id="modalButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#triggerModal" >  Create Event </button>
+</div>
 
-<h1>ciaoooooooidkfoerkfokermfowerfowrfmowrfowirf</h1>
-<h1>ciaoooooooidkfoerkfokermfowerfowrfmowrfowirf</h1>
-<h1>ciaoooooooidkfoerkfokermfowerfowrfmowrfowirf</h1>
+ <!-- begin userModal: this is not visible until you call .modal() on it -->
+<div class="modal fade" tabindex="-1" role="dialog" id="triggerModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Title meal</h4>
+      </div>
+      <div class="modal-body">
+        <fieldset class='form-horizontal'>
+          
+          {{!-- form begins --}}
+          <form id="newPost" onsubmit="createPost(event)">
+          <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="firstName">Title</label>
+              <div class="col-md-4">
+                <input id="title" name="title" type="text" placeholder="" class="form-control input-md" required="">
+              </div>
+            </div>
+            <div id="center" class="modal-footer">
+              <input type="submit" value="Create meal" id="createMealButton" class="btn btn-primary">
+            </div>
+          </form>
+          {{!-- form ends --}}
+        </fieldset>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+</div>
+<!-- Button trigger modal -->
