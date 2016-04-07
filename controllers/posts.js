@@ -40,6 +40,24 @@ var postsController = {
     });
    
   },
+
+  update: function(req, res) {
+
+      var id = req.params.id;
+      console.log("questo è l'id----", id);
+      Post.findById(id, function(err, post){
+        if (err) returnError(err);
+        if (req.body.title) post.title = req.body.title;
+        post.save(function(err, savedPost) {
+          if (err) {
+            res.status(200);
+          } else {
+            res.json(savedPost);
+          }
+      });
+    });
+  },
+
   destroy: function(req, res) {
     var id = req.params.id;
     console.log("back end post id---", id);

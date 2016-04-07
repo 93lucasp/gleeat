@@ -31,8 +31,9 @@ router.route('/api/users')
 router.route('/api/posts')
 	.get(postsController.apiPosts)
 	.post(postsController.createPost);
-	
+
 router.route('/api/posts/:id')
+    .put(postsController.update)
 	.delete(postsController.destroy);
 
 router.route('/profile/:id')

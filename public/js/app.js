@@ -1,5 +1,13 @@
 $(document).ready(function() {
 
+  $(".editModalButton").click(function(){
+    var id = $(this).data()._id;
+    console.log(id);
+    $("#savePost").attr("data-_id", id);
+  });
+
+
+
 });
 
 var createUser = function(e) {
@@ -95,6 +103,35 @@ var createPost = function(e) {
      console.log("Error", err);
  });  
 };
+
+
+
+var editPost = function(post) {
+
+  var id = $("#savePost").data()._id;
+  console.log(id);
+
+  var updateData = {
+    title: $('.titleEdit').val(),
+  
+  };
+
+  var ajaxOption = {
+    url: '/api/posts/' + id,
+    type: "PUT",
+    dataType: 'json',
+    data: updateData,
+    success: function(res) {
+      console.log("UPDATED DATA", updateData);
+      
+      $('#postTitle').html(updateData.title);
+      window.location.href = '/home';
+    
+    }
+  };
+  $.ajax(ajaxOption);
+};
+
 
 
 var deletePost = function(post) {
