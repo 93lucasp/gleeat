@@ -65,6 +65,7 @@ var editUser = function(e) {
     lastName: $('#lastName').val(),
     email: $('#editEmail').val(),
     age: $('#editAge').val(),
+    country: $('#editCountry').val(),
     skypeName: $('#editSkypeNAme').val(),
   };
 
@@ -78,7 +79,8 @@ var editUser = function(e) {
       $('#showLastName').html(updateData.lastName);
       $('#showEmail').html(updateData.email);
       $('#showAge').html(updateData.age);
-      $('#showSkypeNAme').html(updateData.skypeName);
+      $('#showSkypeName').html(updateData.skypeName);
+      $('#showCountry').html(updateData.country);
       $('#headerName').html(updateData.firstName);
     }
   };
