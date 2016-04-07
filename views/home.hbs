@@ -1,6 +1,9 @@
- <h1> Meals </h1>
+
 <div class="container">
 {{!-- lopp for each post --}}
+ <div id="createMeal">
+   <button id="createModalButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#triggerModal" >  Create Moment </button>
+</div>
   {{#each posts}}
   
     <div class="col-md-3">
@@ -80,9 +83,7 @@
 
  {{!-- button to create a meal --}}
 </div>
- <div id="createMeal">
-   <button id="createModalButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#triggerModal" >  Create Event </button>
-</div>
+
 
  <!-- begin userModal to create meal: this is not visible until you call .modal() on it -->
 <div class="modal fade" tabindex="-1" role="dialog" id="triggerModal">

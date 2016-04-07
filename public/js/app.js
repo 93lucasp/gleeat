@@ -6,6 +6,10 @@ $(document).ready(function() {
     $("#savePost").attr("data-_id", id);
   });
 
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
 
 
 });
