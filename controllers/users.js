@@ -43,6 +43,8 @@ var usersController = {
         if (req.body.firstName) user.firstName = req.body.firstName;
         if (req.body.lastName) user.lastName = req.body.lastName;
         if (req.body.email) user.email = req.body.email;
+        if (req.body.age) user.age = req.body.age;
+        if (req.body.skypeName) user.skypeName = req.body.skypeName;
         // if (req.body.photoUrl) user.photoUrl = req.body.photoUrl;
         if (req.body.passwordDigest) user.passwordDigest = req.body.passwordDigest;
 

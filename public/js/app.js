@@ -64,6 +64,8 @@ var editUser = function(e) {
     firstName: $('#firstName').val(),
     lastName: $('#lastName').val(),
     email: $('#editEmail').val(),
+    age: $('#editAge').val(),
+    skypeName: $('#editSkypeNAme').val(),
   };
 
   var ajaxOption = {
@@ -75,6 +77,8 @@ var editUser = function(e) {
       $('#showFirstName').html(updateData.firstName);
       $('#showLastName').html(updateData.lastName);
       $('#showEmail').html(updateData.email);
+      $('#showAge').html(updateData.age);
+      $('#showSkypeNAme').html(updateData.skypeName);
       $('#headerName').html(updateData.firstName);
     }
   };
