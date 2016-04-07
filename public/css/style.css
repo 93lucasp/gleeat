@@ -26,6 +26,7 @@ html, body {
   background-color: #ffb600;
   color: #fff;
   height: 3.4em;
+  font-size: 2em;
 
 }
 #posts {
@@ -252,7 +253,13 @@ li a {
   animation: bounce 2s infinite;
 }
 
-
+#myNavbar {
+  text-align: right;
+}
+#myNavbar a{
+  color: #fff!important;
+  text-shadow: .6px 0 0 #000, -.6px 0 0 #000, 0 .6px 0 #000, 0 -.6px 0 #000, .6px .6px #000, -.6px -.6px 0 #000, .6px -.6px 0 #000, -.6px .6px 0 #000;
+}
 
 html {
 

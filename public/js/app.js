@@ -7,8 +7,8 @@ $(document).ready(function() {
   });
 
   $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
+  $('[data-toggle="tooltip"]').tooltip();
+});
 
 
 
@@ -118,12 +118,11 @@ var createPost = function(e) {
 
 var editPost = function(post) {
 
-  var id = $("#savePost").data()._id;
+  var id = $("#savePost").attr("data-_id");
   console.log(id);
 
   var updateData = {
     title: $('.titleEdit').val(),
-  
   };
 
   var ajaxOption = {
@@ -132,10 +131,10 @@ var editPost = function(post) {
     dataType: 'json',
     data: updateData,
     success: function(res) {
-      console.log("UPDATED DATA", updateData);
+      console.log("UPDATED DATA", updateData, id);
       
-      $('#postTitle').html(updateData.title);
-      window.location.href = '/home';
+      $('#'+id).html(updateData.title);
+      id = "";
     
     }
   };

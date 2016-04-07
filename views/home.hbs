@@ -9,19 +9,19 @@
     <div class="col-md-3">
       <div class="panel panel-default">
         <div id= "posts" class="panel-body">
-          <div id="postTitle" class="postTitleClass"><h2>{{this.title}}</h2></div><br>
+          <div id="{{this._id}}" class="postTitleClass"><h2>{{this.title}}</h2></div><br>
 
          {{!--  {{this.postedBy}} --}}
           {{this.user.firstName}}
         {{!--   <p>ciao: {{currentUser._id}}</p> --}}
           {{!-- Skype button --}}
           <script type="text/javascript" src="https://secure.skypeassets.com/i/scom/js/skype-uri.js"></script>
-            <div id="{{this._id}}">
+            <div id="1{{this._id}}">
               <div id="SkypeButton_Call_{{this.user.skypeName}}_1">
                <script type="text/javascript">
                  Skype.ui({
                    "name": "call",
-                   "element": "{{this._id}}",
+                   "element": "1{{this._id}}",
                    "participants": ["{{this.user.skypeName}}"],
                    "imageSize": 24
                  });
