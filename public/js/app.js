@@ -51,7 +51,7 @@ var loginUser = function(e) {
   	$.post("/login", user)
     .done(function(req, res) {
   	 window.location.href = '/home';
-  })
+    })
     .fail(function(err) {
       console.log("Error", err);
     });  

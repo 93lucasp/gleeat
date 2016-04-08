@@ -36,7 +36,26 @@ var postsController = {
             post.user = user;
           });
       });
-       res.render('../views/home', {posts: posts});
+          console.log("currentUser is", req.currentUser);
+          req.currentUser(function(){
+            posts.forEach(function(post){
+              console.log("posted by", post.postedBy[0]);
+              console.log("req user", req.user);
+              if(req.user && (post.postedBy[0].id === req.user._id.id)) {
+              post.canDelete = true;
+              } else {
+              post.canDelete = false;
+              }
+    
+            });
+      
+        res.render('../views/home', {posts: posts});
+      });
+      // if(currentUser && (currentUser._id === user._id)) {
+      //   post.canDelete === true;
+      // } else {
+      //   post.canDelete === false;
+      // }
     });
    
   },

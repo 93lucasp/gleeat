@@ -22,17 +22,37 @@ html, body {
 .container {
   margin-top: 5%;
 }
+.col-md-3 {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 5%;
+  height: 300px;
+}
 .postTitleClass{
   background-color: #ffb600;
   color: #fff;
-  height: 3.4em;
+  height: 2.4em;
   font-size: 2em;
 
 }
+
 #posts {
   text-align: center;
   padding: 0;
+
 }
+
+.panel {
+  margin-top: 20%;
+}
+
+.navbar-right {
+  margin-right: 0px;
+  display: inline-block;
+  min-width:300px;
+}
+
+  
 .panel:hover {
   position: relative;
   top:-14px;
@@ -113,9 +133,6 @@ margin: 0 auto;
 	top: 0;
 
 }
-.navbar {
-
-}
 .logo img {
 	width: 100%;
 	padding-top: 20%;
@@ -179,7 +196,7 @@ li a {
 	color: #3399ff;
 }
 
-#center {
+.center {
 	text-align: center;
 }
 
@@ -257,8 +274,8 @@ li a {
   text-align: right;
 }
 #myNavbar a{
-  color: #fff!important;
-  text-shadow: .6px 0 0 #000, -.6px 0 0 #000, 0 .6px 0 #000, 0 -.6px 0 #000, .6px .6px #000, -.6px -.6px 0 #000, .6px -.6px 0 #000, -.6px .6px 0 #000;
+  color: #fff;
+ 
 }
 
 html {
