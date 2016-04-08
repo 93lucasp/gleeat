@@ -351,10 +351,12 @@ body {
   background: #fff;
 }
 #slide2 p{
-   font-size: 1.4em;
+   font-size: 1.6em;
+   line-height: 2em;
 }
 #slide2 h1{
-  margin-top: -12%;
+  margin-top: -10%;
+  margin-bottom: 5%;
 }
 #slide3 h1{
   margin-top: -12%;
@@ -366,9 +368,10 @@ body {
   
 }
 #slide3 p{
-  font-size: 1.4em;
+  font-size: 1.6em;
+  line-height: 2em;
    text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
-  
+  margin-bottom: 5%;
 }
 #slide4 h1{
   margin-top: -12%;
