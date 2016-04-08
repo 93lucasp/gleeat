@@ -1,16 +1,14 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var User = require("./user");
 
 var PostSchema = new Schema({
-	name: String,
-	email: String,
-	description: String,
-	photoUrl: String,
+	title: {type: String},
 	createdAt: { type: Date, required: false, default: Date.now },
-	postedBy: {
-       type: mongoose.Schema.Types.ObjectId,
+	postedBy: [{
+       type: Schema.Types.ObjectId,
        ref: 'User'
-   }
+    }]
 });
 
 var Post = mongoose.model('Post', PostSchema);

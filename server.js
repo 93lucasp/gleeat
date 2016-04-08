@@ -1,17 +1,18 @@
-var express 	   	= require('express'),
-	app 		    = express(),
-	mongoose 	    = require('mongoose'),
-	bodyParser     	= require('body-parser'),
-	methodOverride 	= require('method-override'),
-	hbs 		   	= require('hbs'),
-	hbsutils 	 	= require('hbs-utils')(hbs),
-	path 			= require('path'),
-	db 				= require("./models"),
-	logger 			= require('morgan'),
-	bcrypt 			= require('bcrypt'),
-	session 		= require("express-session"),
-	keygen			= require('keygenerator'),
-	User 			= require("./models/user");
+var express 	   	 = require('express'),
+	app 		         = express(),
+	mongoose 	       = require('mongoose'),
+	bodyParser       = require('body-parser'),
+	methodOverride 	 = require('method-override'),
+	hbs 		   	     = require('hbs'),
+	hbsutils 	 	     = require('hbs-utils')(hbs),
+	path 			       = require('path'),
+	db 				       = require("./models"),
+	logger 			     = require('morgan'),
+	bcrypt 			     = require('bcrypt'),
+	session 		     = require("express-session"),
+	keygen			     = require('keygenerator'),
+	User 			       = require("./models/user");
+  Post             = require("./models/post");
 
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -32,6 +33,14 @@ app.use(
   })
 );
 
+// app.Handlebars.registerHelper('if_eq', function(a, b, opts) {
+//     if (a == b) {
+//         return opts.fn(this);
+//     } else {
+//         return opts.inverse(this);
+//     }
+// });
+
 app.use(function(req, res, next){
   //login user
   req.login = function(user) {
@@ -44,10 +53,10 @@ app.use(function(req, res, next){
       req.user = user;
       res.locals.currentUser = user;
       cb(null, user);
-      });
+    });
 
   };
-  console.log()
+
   // log out current user
   req.logout = function() {
     req.session.userId = null;
@@ -61,7 +70,7 @@ app.use(function(req, res, next){
 var routes = require('./config/routes');
 app.use(routes);
 
-app.listen(2000, function() {
+app.listen(process.env.PORT || 2016, function() {
 	console.log('server is running');
 });
 
