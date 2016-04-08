@@ -7,9 +7,10 @@ var UserSchema = new Schema({
 	lastName: {type: String},
 	email: {type: String},
 	skypeName: {type: String},
-	photoUrl: String,
+  country: {type: String},
+	age: {type: Number},
 	passwordDigest: {type: String, required: true},
-  
+  // posts : [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post' }]
 });
 
 // create a new user with secure (hashed) password (for sign up)

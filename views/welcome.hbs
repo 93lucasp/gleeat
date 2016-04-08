@@ -1,16 +1,51 @@
-<div id="parallax" class="slide">
+<div class="slide parallax">
+
+
   <hr />
+              <h1>We are building a new experience!</h1>
+              <hr />
               <h1>Meet someone else during your meal</h1>
                 <button id="modalButton" type="button" class="buttonSignUp" data-toggle="modal" data-target="#triggerModal"> Sign up </button>
               <hr />
-                <div class="arrow bounce"></div>
+              <a class="nav-link" href="#slide2"><div class="arrow bounce"></div></a>
+                
             
 </div>
+<section id="slide2" >
+<div id="slide2" class="slide header">
+    <h1>How it works</h1>
+    <p>Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni ’60, con la diffusione dei fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum.</p>
+    </div>
+</section>
+  <div id="slide3" class="slide">
+      
+              <h1>How Gleeat works</h1>
+              <p>Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni ’60, con la diffusione dei fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum.</p>
+              <h2>What the people think</h2>
+<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="It's funny ahahahah">Giuseppe</button>
 
-<div id="slide4" class="slide header">
-    <h1>The End</h1>
-</div>
+<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Finally something different!">Lena</button>
+<br />   
+<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Amazing service!">Daniel</button>
+<br />
 
+<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Yesterday I was bored but with Gleeat I enjoyed my meal talking with Ivan">Luca</button>
+
+<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Eating with new people every day :) That's cool">Gloria</button>
+<br />   
+<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="ahahahah it's cool because you don't know who is in the other side">Dani</button>
+<br />
+<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Great!">Sophia</button>
+
+<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="I'm really enjoying Gleeat">Mario</button>
+<br />   
+<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="With who I'm going to eat today? ahahah">Derek</button>
+    
+  </div>
+  <div  id="slide4" class="slide header slide4">
+      <h1>Faqs</h1>
+      <p></p>
+  </div>
 
 
 <!-- begin userModal: this is not visible until you call .modal() on it -->
@@ -72,15 +107,24 @@
                 <input id="signupPassword" name="password" type="password"placeholder="" class="form-control input-md" required="">
               </div>
             </div>
-            
-            <!-- Text input-->
-            {{!-- <div class="form-group">
-              <label class="col-md-4 control-label" for="photoUrl">Photo</label>
-              <div class="col-md-4">
-                <input type="hidden" name="photoUrl" role="uploadcare-uploader" data-image-shrink="240x380" />
-            </div> --}}
 
-            <div id="center" class="modal-footer">
+             <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="firstName">Country</label>
+              <div class="col-md-4">
+                <input id="country" name="country" type="text" placeholder="" class="form-control input-md" required="">
+              </div>
+            </div>
+            
+             <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="firstName">Age</label>
+              <div class="col-md-4">
+                <input id="age" name="age" type="text" placeholder="" class="form-control input-md" required="">
+              </div>
+            </div>
+
+            <div class="center" >
               <input type="submit" value="Sign Up" id="sign_up_button" class="btn btn-primary">
             </div>
           </form>
