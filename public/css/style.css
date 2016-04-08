@@ -11,6 +11,9 @@ html, body {
 
 
 }
+.margin-bottom{
+  margin-bottom: 0;
+}
 #links ul{
   margin-top: -14%;
 }
@@ -192,7 +195,15 @@ li a {
 	z-index: 1;
 	padding: 1% 0;
 }
-
+#profile{
+  width: 50%;
+  margin: 0 auto;
+  background-color: #000;
+  color: #fff;
+  opacity: .8;
+  padding: 4% 0;
+  border-radius: 5px;
+}
 .buttonSignUp:hover {
 	opacity: .8;
 	background-color: #fff;
@@ -205,11 +216,12 @@ li a {
 
 #profile_page{
 	
-  background-color: #B1B1B1;
+  background-image: url("/images/profile.jpeg");
   width: 100%;
-  
- 
-  margin-top: 10%;
+  color: #fff;
+  background-size: cover;
+  padding: 10% 0;
+  margin-top: -5%;
 }
 
 @-moz-keyframes bounce {

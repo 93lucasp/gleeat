@@ -1,6 +1,7 @@
 <div id="profile_page"></div>
 <script id="user-template" type="text/x-handlbars-template">
 	<div class="profilePages">
+		<div id="profile">
     	<div id="\{{user._id}}" class="profile">
     		<h4> 
     			<strong>Name:</strong> <br /> 
@@ -31,6 +32,7 @@
 
       		<button class="btn btn-primary" id="modalEditUser"  data-toggle="modal" data-target="#triggerEditModal">Edit</button>
      		<button class='btn btn-danger' onclick="deleteUser(event)">x</button>
+     		</div>
 		</div>
 	</div>
 </script> 
