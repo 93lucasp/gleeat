@@ -4,6 +4,7 @@ var session = require('express-session');
 var usersController = {
   create: function(req, res) {
   	var user = req.body;
+    console.log("hi daniel", user);
   	User.createSecure(user, function(err, user) {
       console.log("user is2222: ", user);
       err ?

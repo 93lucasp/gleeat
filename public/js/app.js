@@ -12,6 +12,7 @@ $(document).ready(function() {
 
 
 
+
 });
 
 var createUser = function(e) {
@@ -82,6 +83,7 @@ var editUser = function(e) {
       $('#showSkypeName').html(updateData.skypeName);
       $('#showCountry').html(updateData.country);
       $('#headerName').html(updateData.firstName);
+      
     }
   };
   $.ajax(ajaxOption);

@@ -70,7 +70,7 @@ app.use(function(req, res, next){
 var routes = require('./config/routes');
 app.use(routes);
 
-app.listen(2016, function() {
+app.listen(process.env.PORT || 2016, function() {
 	console.log('server is running');
 });
 

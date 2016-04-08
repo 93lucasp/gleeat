@@ -13,23 +13,22 @@
         <img src="/images/logo.png">
         </a>
       </div>
-      </div>
+    </div>
 
       <div class="collapse navbar-collapse inline-block" id="myNavbar">
         <ul class ="nav navbar-nav navbar-right"> 
     {{#if currentUser}}
+    <li>
+      <a href="/profile/{{currentUser._id}}">{{currentUser.firstName}}</a>
+    </li>
      <li >
       <a href="/home" id="logout">Home</a>
     </li>
     <li>
       <a href="/logout" id="logout">Logout</a>
     </li>
-    <li>
-      <a href="profile/{{currentUser._id}}">{{currentUser.firstName}}</a>
-    </li>
-    <li>
-      <a href="/logout" id="logout">Logout</a>
-    </li>
+    
+    
 
    
     {{else}}

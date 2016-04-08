@@ -25,7 +25,7 @@ html, body {
 .col-md-3 {
   margin: 0;
   padding: 0;
-  margin-bottom: 5%;
+  margin-bottom: 10%;
   height: 300px;
 }
 .postTitleClass{
@@ -47,9 +47,12 @@ html, body {
 }
 
 .navbar-right {
-  margin-right: 0px;
+  z-index: 1000;
+  position: relative;
   display: inline-block;
-  min-width:300px;
+  min-width:350px;
+  float: right;
+ 
 }
 
   
@@ -126,9 +129,9 @@ margin: 0 auto;
 	background-color: #ffb600;
 	height: 5em;
   left: 0;
-	padding: 0 2% 1% 0;
+	padding: 0 0 1% 0;
 	z-index: 2;
-	position: fixed;
+
 	width: 100%;
 	top: 0;
 
@@ -201,7 +204,12 @@ li a {
 }
 
 #profile_page{
-	padding-top: 5%;
+	
+  background-color: #B1B1B1;
+  width: 100%;
+  
+ 
+  margin-top: 10%;
 }
 
 @-moz-keyframes bounce {
@@ -314,7 +322,8 @@ body {
 }
 
 .slide, .slide:before {
-  background: 50% 50% / cover;  
+  background: 50% 50% / cover; 
+
 }
 
 .parallax {
@@ -328,6 +337,7 @@ body {
   background-image: url("/images/header.jpg");
   transform: translateZ(-1px) scale(2);
   z-index:-1;
+
 }
 
 #slide4 {
