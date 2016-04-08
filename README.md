@@ -10,23 +10,23 @@
  This is the version beta so to use the service momentanely you need to have an skype account.
  
 ### How Gleeat works?
- 
-  It's easy to use, once you make your account you can look who is eating at that moment and call someone, you will know only the name and the age nothing else so who will be in the other side will a "surprise".
-  Is that funny right?
-  
 
- ### technologies
- 
- ##### JQuery
- ##### Javascript
- ##### Nodejs
- ##### Express
- ##### HTML
- ##### CSS
- ##### Nodejs
- ##### Express
- ##### Bcrypt
- ##### Skype functionality
+It's easy to use, once you make your account you can look who is eating at that moment and call someone, you will know only the name and the age nothing else so who will be in the other side will a "surprise".
+Is that funny right?
+
+
+### technologies
+
+##### JQuery
+##### Javascript
+##### Nodejs
+##### Express
+##### HTML
+##### CSS
+##### Nodejs
+##### Express
+##### Bcrypt
+##### Skype functionality
 
 
 
