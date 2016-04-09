@@ -33,14 +33,6 @@ app.use(
   })
 );
 
-// app.Handlebars.registerHelper('if_eq', function(a, b, opts) {
-//     if (a == b) {
-//         return opts.fn(this);
-//     } else {
-//         return opts.inverse(this);
-//     }
-// });
-
 app.use(function(req, res, next){
   //login user
   req.login = function(user) {

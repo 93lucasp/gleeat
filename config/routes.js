@@ -11,15 +11,9 @@ var express 			   = require('express'),
 	usersController 	   = require('../controllers/users'),
 	router 				   = express.Router();
 
-// mongoose.connect('mongodb://localhost/gleeat');
-
 router.route('/').get(function(req, res){
   res.render('welcome');
 });
-
-// router.route("/home").get(function(req, res) {
-// 	res.render("home");
-// });
 
 router.route('/api')
 	.get(usersController.apiRoot);

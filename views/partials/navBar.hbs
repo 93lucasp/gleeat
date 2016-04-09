@@ -1,52 +1,45 @@
 <nav class="navbar navbar-default margin-bottom">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        
-       <div class="logo">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="logo">
         <a href="/">
-        <img src="/images/logo.png">
+          <img src="/images/logo.png">
         </a>
       </div>
     </div>
-
-      <div class="collapse navbar-collapse inline-block" id="myNavbar">
-        <ul class ="nav navbar-nav navbar-right"> 
-    {{#if currentUser}}
-    <li>
-      <a href="/profile/{{currentUser._id}}">{{currentUser.firstName}}</a>
-    </li>
-     <li >
-      <a href="/home" id="logout">Home</a>
-    </li>
-    <li>
-      <a href="/logout" id="logout">Logout</a>
-    </li>
-    
-    
-
-   
-    {{else}}
-    <li>
-      <a href="#" id="modalButtonLogin" type="button" data-toggle="modal" data-target="#triggerModalLogin">Login</a>
-    </li>
-    <li>
-      <a href="#slide2">How it works</a>
-    </li>
-    <li>
-      <a href="#slide3">About us</a>
-    </li>
-    {{/if}}
-    
-  </ul>
-      </div>
+    <div class="collapse navbar-collapse inline-block" id="myNavbar">
+      <ul class ="nav navbar-nav navbar-right"> 
+        {{#if currentUser}}
+        <li>
+          <a href="/profile/{{currentUser._id}}">{{currentUser.firstName}}</a>
+        </li>
+         <li >
+          <a href="/home" id="logout">Home</a>
+        </li>
+        <li>
+          <a href="/logout" id="logout">Logout</a>
+        </li>
+        {{else}}
+        <li>
+          <a href="#" id="modalButtonLogin" type="button" data-toggle="modal" data-target="#triggerModalLogin">Login</a>
+        </li>
+        <li>
+          <a href="#slide2">How it works</a>
+        </li>
+        <li>
+          <a href="#slide3">About us</a>
+        </li>
+        {{/if}}
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
 
 <!-- begin songModal: this is not visible until you call .modal() on it -->
@@ -75,7 +68,7 @@
 								</div>
 						</div>
             <div class="center" >
-						<input type="submit" class="btn btn-primary" value="Login">
+						  <input type="submit" class="btn btn-primary" value="Login">
             </div>
 					</form>
 				</fieldset>

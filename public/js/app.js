@@ -7,12 +7,8 @@ $(document).ready(function() {
   });
 
   $(function () {
-  $('[data-toggle="tooltip"]').tooltip();
-});
-
-
-
-
+    $('[data-toggle="tooltip"]').tooltip();
+  });
 });
 
 var createUser = function(e) {
@@ -21,41 +17,39 @@ var createUser = function(e) {
 	console.log(newUser);
 	$.post("/api/users", newUser)
  	 .done(function(res) {
-		var id = JSON.parse(res)._id;
-		console.log('create user was successful!', res);
-		// window.location.href = '/profile/' + id;
-  $.post("/login", newUser)
-    .done(function(req, res) {
-     window.location.href = '/profile/' + id;
-  });
-	})
-     .fail(function(err) {
-     console.log("Error", err);
- });  
-};
-
-var renderUser = function(user) {
-  var showUser = user;
-  var $profilePage = $('#profile_page');
-  $profilePage.html("");
-  var userTemplate = Handlebars.compile($('#user-template').html());
-  var compiledHTML = userTemplate({user: showUser});
-    // console.log('USER', showUser);
-  $profilePage.append(compiledHTML);
-};
-
-var loginUser = function(e) {
-	// console.log("logged1");
-	e.preventDefault();
-	var user = $(e.target).serialize();
-	console.log(user);
-  	$.post("/login", user)
-    .done(function(req, res) {
-  	 window.location.href = '/home';
+		  var id = JSON.parse(res)._id;
+		  console.log('create user was successful!', res);
+		  // window.location.href = '/profile/' + id;
+      $.post("/login", newUser)
+       .done(function(req, res) {
+          window.location.href = '/profile/' + id;
+        });
     })
     .fail(function(err) {
       console.log("Error", err);
     });  
+};
+
+var renderUser      = function(user) {
+  var showUser      = user;
+  var $profilePage  = $('#profile_page');
+  $profilePage.html("");
+  var userTemplate  = Handlebars.compile($('#user-template').html());
+  var compiledHTML  = userTemplate({user: showUser});
+  $profilePage.append(compiledHTML);
+};
+
+var loginUser = function(e) {
+	e.preventDefault();
+	var user = $(e.target).serialize();
+	console.log(user);
+	$.post("/login", user)
+  .done(function(req, res) {
+	  window.location.href = '/home';
+  })
+  .fail(function(err) {
+    console.log("Error", err);
+  });  
 };
 
 var editUser = function(e) {
@@ -63,10 +57,10 @@ var editUser = function(e) {
   var id = $('#userID').val();
   var updateData = {
     firstName: $('#firstName').val(),
-    lastName: $('#lastName').val(),
-    email: $('#editEmail').val(),
-    age: $('#editAge').val(),
-    country: $('#editCountry').val(),
+    lastName:  $('#lastName').val(),
+    email:     $('#editEmail').val(),
+    age:       $('#editAge').val(),
+    country:   $('#editCountry').val(),
     skypeName: $('#editSkypeNAme').val(),
   };
 
@@ -83,7 +77,6 @@ var editUser = function(e) {
       $('#showSkypeName').html(updateData.skypeName);
       $('#showCountry').html(updateData.country);
       $('#headerName').html(updateData.firstName);
-      
     }
   };
   $.ajax(ajaxOption);
@@ -108,25 +101,20 @@ var createPost = function(e) {
   console.log(newPost);
   $.post("/api/posts", newPost)
    .done(function(res) {
-    console.log('create post was successful!', res);
-    window.location.href = '/home';
-  })
-     .fail(function(err) {
+     console.log('create post was successful!', res);
+     window.location.href = '/home';
+    })
+   .fail(function(err) {
      console.log("Error", err);
- });  
+    });  
 };
 
-
-
 var editPost = function(post) {
-
   var id = $("#savePost").attr("data-_id");
   console.log(id);
-
   var updateData = {
     title: $('.titleEdit').val(),
   };
-
   var ajaxOption = {
     url: '/api/posts/' + id,
     type: "PUT",
@@ -134,16 +122,12 @@ var editPost = function(post) {
     data: updateData,
     success: function(res) {
       console.log("UPDATED DATA", updateData, id);
-      
       $('#'+id).html(updateData.title);
       id = "";
-    
     }
   };
   $.ajax(ajaxOption);
 };
-
-
 
 var deletePost = function(post) {
   var postId = $(post).data()._id;
@@ -153,18 +137,7 @@ var deletePost = function(post) {
     url: '/api/posts/' + postId,
     type: 'DELETE',
     success: function(res) {
-      // once successfull, re-render all foods
       window.location.href = '/home';
     }
   });
 };
-// var renderPosts = function(posts) {
-//   var showPosts = posts;
-//   var $homePage = $('#posts');
-//   $homePage.html("");
-//   var postsTemplate = Handlebars.compile($('#posts-template').html());
-//   var compiledHTML = postsTemplate({posts: showPosts});
-//     // console.log('USER', showUser);
-//   $homePage.append(compiledHTML);
-// };
-
